@@ -9,6 +9,7 @@ const ControllerSale = require("./controllers/Sale");
 router
   .get("/clients", ControllerClient.index)
   .post("/clients", ControllerClient.create)
+  .delete("/clients/:client_id", ControllerClient.delete)
   .delete("/clients", ControllerClient.deleteAll);
 
 // Sales

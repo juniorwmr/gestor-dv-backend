@@ -1,4 +1,6 @@
 const Client = require("../models/Client");
+const Sale = require("../models/Sale");
+const { deleteMany } = require("../models/Client");
 
 module.exports = {
   async index(req, res) {
@@ -13,6 +15,18 @@ module.exports = {
     try {
       const client = await Client.create(req.body);
       return res.send({ client });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  async delete(req, res) {
+    const { client_id } = req.params;
+    try {
+      const deleted = await Client.deleteOne({ _id: client_id });
+      if (deleted) {
+        await Sale.deleteMany({ client_id });
+      }
+      return res.send();
     } catch (error) {
       console.log(error);
     }
