@@ -2,8 +2,10 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require("./routes");
 const cors = require("cors");
+
+const routes = require("./routes");
+const errors = require("./errors");
 
 const server = express();
 
@@ -26,4 +28,7 @@ server.use(cors());
 server.use(express.json());
 server.use(routes);
 
-app.listen(process.env.PORT || 3333);
+server.use(errors.NotFound);
+server.use(errors.CatchAll);
+
+server.listen(process.env.PORT || 3333);
