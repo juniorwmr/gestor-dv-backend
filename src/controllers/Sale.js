@@ -6,12 +6,13 @@ module.exports = {
   async index(req, res) {
     const { date } = req.body;
     const date_modify = new Date(date);
-    console.log(date_modify);
+    const start = moment(date_modify).utc().startOf("day").toDate();
+    const end = moment(date_modify).utc().endOf("day").toDate();
     try {
       const sales = await Sale.find({
         created_at: {
-          $gte: date_modify,
-          $lte: moment(date_modify).utc().endOf("day"),
+          $gte: start,
+          $lte: end,
         },
       })
         .populate("client_id")

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const moment = require("moment");
 
 const SaleSchema = new mongoose.Schema({
   client_id: {
@@ -19,7 +20,7 @@ const SaleSchema = new mongoose.Schema({
   },
   created_at: {
     type: Date,
-    default: Date.now,
+    default: moment(),
   },
 });
 
