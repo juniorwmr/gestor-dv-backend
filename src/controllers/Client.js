@@ -1,6 +1,5 @@
 const Client = require("../models/Client");
 const Sale = require("../models/Sale");
-const { deleteMany } = require("../models/Client");
 
 module.exports = {
   async index(req, res) {

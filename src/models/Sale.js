@@ -20,7 +20,7 @@ const SaleSchema = new mongoose.Schema({
   },
   created_at: {
     type: Date,
-    default: moment(),
+    default: Date.now,
   },
 });
 
