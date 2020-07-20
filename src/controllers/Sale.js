@@ -41,6 +41,15 @@ module.exports = {
       console.log(error);
     }
   },
+  async delete(req, res) {
+    const { sale_id } = req.params;
+    try {
+      await Sale.deleteOne({ _id: sale_id });
+      return res.send();
+    } catch (error) {
+      console.log(error);
+    }
+  },
   async deleteAll(req, res) {
     try {
       await Sale.deleteMany({});

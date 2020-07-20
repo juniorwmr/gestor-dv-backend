@@ -17,6 +17,7 @@ router
   .post("/sales", ControllerSale.index)
   .get("/sales/:client_id", ControllerSale.indexByClient)
   .post("/sales/:client_id", ControllerSale.create)
+  .delete("/sales/:sale_id", ControllerSale.delete)
   .delete("/sales", ControllerSale.deleteAll);
 
 module.exports = router;
