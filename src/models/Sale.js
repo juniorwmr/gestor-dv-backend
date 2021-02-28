@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
-const moment = require("moment");
+const mongoose = require('mongoose');
+const moment = require('moment');
 
 const SaleSchema = new mongoose.Schema({
   client_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Client",
+    ref: 'Client',
   },
   description: {
     type: String,
@@ -13,6 +13,10 @@ const SaleSchema = new mongoose.Schema({
   value: {
     type: Number,
     require: true,
+  },
+  points: {
+    type: Number,
+    require: false,
   },
   type: {
     type: Number,
@@ -24,6 +28,6 @@ const SaleSchema = new mongoose.Schema({
   },
 });
 
-const Sale = mongoose.model("Sale", SaleSchema);
+const Sale = mongoose.model('Sale', SaleSchema);
 
 module.exports = Sale;
