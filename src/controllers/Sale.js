@@ -1,5 +1,4 @@
 const Sale = require('../models/Sale');
-const { endOfDay, startOfDay } = require('date-fns');
 const moment = require('moment');
 
 module.exports = {

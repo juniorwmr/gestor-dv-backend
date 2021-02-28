@@ -1,5 +1,5 @@
-const Client = require("../models/Client");
-const Sale = require("../models/Sale");
+const Client = require('../models/Client');
+const Sale = require('../models/Sale');
 
 module.exports = {
   async index(req, res) {
