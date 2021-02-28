@@ -1,11 +1,11 @@
-require("dotenv").config();
+require('dotenv').config();
 
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 
-const routes = require("./routes");
-const errors = require("./errors");
+const routes = require('./routes');
+const errors = require('./errors');
 
 const server = express();
 
@@ -20,7 +20,7 @@ mongoose.connect(
     useFindAndModify: false,
   },
   () => {
-    console.log("Database is ON!");
+    console.log('Database is ON!');
   }
 );
 
