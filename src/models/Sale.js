@@ -14,10 +14,6 @@ const SaleSchema = new mongoose.Schema({
     type: Number,
     require: true,
   },
-  points: {
-    type: Number,
-    require: false,
-  },
   type: {
     type: Number,
     require: true,
