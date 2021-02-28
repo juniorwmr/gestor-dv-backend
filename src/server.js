@@ -31,4 +31,4 @@ server.use(routes);
 server.use(errors.NotFound);
 server.use(errors.CatchAll);
 
-server.listen(process.env.PORT || 3333);
+server.listen(process.env.PORT || 3000);
